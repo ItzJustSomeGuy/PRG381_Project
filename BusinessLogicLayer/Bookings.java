@@ -86,7 +86,7 @@ public class Bookings extends Event {
     public void setPrice(float price) {
         this.price = price;
     }
-/*
+
     public List<Food> getFoodList() {
         return foodList;
     }
@@ -94,7 +94,7 @@ public class Bookings extends Event {
     public void setFoodList(List<Food> foodList) {
         this.foodList = foodList;
     }
-*/
+
     public Boolean getDecor() {
         return Decor;
     }
