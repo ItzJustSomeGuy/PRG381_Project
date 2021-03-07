@@ -22,6 +22,7 @@ public class Bookings extends Event {
         this.price = price;
         this.type = type;
     }
+    
 
     //Calculates, sets and returns the total Price
     public float calculatePrice(){
