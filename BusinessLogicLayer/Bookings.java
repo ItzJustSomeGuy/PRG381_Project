@@ -14,7 +14,7 @@ public class Bookings extends Event {
     int drinks =0;
     int desserts =0;
     Boolean Decor = false;
-    Boolean Confirmed = false; // to confirm an event date, may be done in database 
+    Boolean confirmed = false; // to confirm an event date, may be done in database 
     //Event day must be set elswere (Or in database) when confirming the event
 
     public Bookings(Venue eventVenue, int people, float price, String type) {
@@ -65,6 +65,11 @@ public class Bookings extends Event {
         {
             this.finalPrice = finalPrice +500; //set testing price for decorations
             this.finalPrice = (float) (finalPrice - 500 + this.decorations.getDecorPrice()); //will use this if decor class is kept
+        }
+
+        if (this.confirmed.equals(true))
+        {
+            this.finalPrice = (float) (finalPrice*0.5); // 50% off if confirmed, 15 days or more calculated in the Event class
         }
 
         return this.finalPrice;
