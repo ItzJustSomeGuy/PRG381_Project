@@ -7,7 +7,7 @@ public class Food implements Serializable {
 	int mealID;	//ID of the meal type
 	String mealType;	//States whether it is adults meal, or kids meal, etc
 	String mealChoice;	//Sub devision of mealtype eg. Hamburgers and chips
-	Float mealPrice;	//price of the mealChoice for 1 Person
+	double mealPrice;	//price of the mealChoice for 1 Person
 
 	public int getMealID() {
 		return mealID;
@@ -25,11 +25,11 @@ public class Food implements Serializable {
 		this.mealType = mealType;
 	}
 
-	public Float getMealPrice() {
+	public double getMealPrice() {
 		return mealPrice;
 	}
 
-	public void setMealPrice(Float mealPrice) {
+	public void setMealPrice(double mealPrice) {
 		this.mealPrice = mealPrice;
 	}
 
@@ -41,7 +41,7 @@ public class Food implements Serializable {
 		this.mealChoice = mealChoice;
 	}
 
-	public Food(int mealID, String mealType, String mealChoice, Float mealPrice) {
+	public Food(int mealID, String mealType, String mealChoice, double mealPrice) {
 		this.mealID = mealID;
 		this.mealType = mealType;
 		this.mealChoice = mealChoice;

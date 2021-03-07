@@ -105,7 +105,7 @@ public class ProgramMethods {
         boolean decorations = false;        
         boolean contloop = true;
         while (contloop) {
-            float totalprice = 0;
+            double totalprice = 0;
             System.out.println("---------------------------------------\n"
                               +"\t\tNEW EVENT\n"
                               +"---------------------------------------");
@@ -270,20 +270,20 @@ public class ProgramMethods {
             int allergiesorRequests;
             String allergiesDetails;
             String allergysummary = "";
-            float mealPrice = 0;
+            double mealPrice = 0;
             int menunum = 0;
             String adultmeal = "";
             int adultpersons = 0;
-            float adultprice = 0;
+            double adultprice = 0;
             String kidsmeal = "";
             int kidspersons = 0;
-            float kidsprice = 0;
+            double kidsprice = 0;
             String drinkchoice = "";
             int drinkpersons = 0;
-            float drinkprice = 0;
+            double drinkprice = 0;
             String dessertmeal = "";
             int dessertpersons = 0;
-            float dessertprice = 0;
+            double dessertprice = 0;
             
             System.out.println("---------------------------------------\n"
                               +"\t\tFOOD\n"
@@ -474,5 +474,7 @@ public class ProgramMethods {
                 }
         }
     }
-
+    public void EditEvent() {
+        System.out.println("");
+    }
 }
