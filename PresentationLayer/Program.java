@@ -7,20 +7,21 @@ import java.util.Scanner;
  */
 public class Program {
 
+    enum MainMenu {
+        nClient,
+        nEvent,
+        vEvent,
+        eEvent,
+        exit
+    }
     public static void main(String[] args) {
         
-        enum MainMenu {
-            nClient,
-            nEvent,
-            vEvent,
-            eEvent,
-            exit
-        }
+        
         ProgramMethods pm = new ProgramMethods();
         boolean contLoop = true;
         while (contLoop) {
             System.out.println("---------------------------------------\n"
-                              +"     WELCOME TO DELICIOUS CATERING\n"
+                              +"\tWELCOME TO DELICIOUS CATERING\n"
                               +"---------------------------------------\n"
                               +"1. NEW CLIENT\n"
                               +"2. ADD A NEW EVENT\n"
@@ -39,7 +40,7 @@ public class Program {
                         switchloop = false;
                         break;
                     case 2:
-                        System.out.println("New event");
+                        pm.NewEvent();
                         switchloop = false;
                         break;
                     case 3:
