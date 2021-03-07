@@ -49,7 +49,7 @@ public class Bookings extends Event {
                 drinks ++;
             }
 
-            if (foodList.get(i).getMealType().equalsIgnoreCase("Desset"))
+            if (foodList.get(i).getMealType().equalsIgnoreCase("Dessert"))
             {
                 desserts ++;
             }
