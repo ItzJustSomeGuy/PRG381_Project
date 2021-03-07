@@ -59,8 +59,6 @@ public class Bookings extends Event {
         {
             this.finalPrice = (float) (finalPrice - adultFoodPrice * 0.15); // 15% discount if 40+ people
         }
-    
-
 
         if (Decor)
         {
@@ -117,5 +115,11 @@ public class Bookings extends Event {
 
     public void setConfirmed(Boolean confirmed) {
         Confirmed = confirmed;
+    }
+
+    public Bookings(String type, float price) {
+        super();
+        this.type = type;
+        this.price = price;
     }
 }
