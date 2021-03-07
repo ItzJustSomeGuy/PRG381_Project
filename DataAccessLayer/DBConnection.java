@@ -1,5 +1,6 @@
 package DataAccessLayer;
 
+import java.io.Serializable;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,7 +12,7 @@ import java.util.List;
 import BusinessLogicLayer.Bookings;
 import BusinessLogicLayer.Food;
 
-public class DBConnection {
+public class DBConnection implements Serializable{
 
     public List<Food> getFood() throws ClassNotFoundException {
         Class.forName("com.sqlserver.cj.jdbc.Driver");
