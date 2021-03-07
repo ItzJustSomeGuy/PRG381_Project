@@ -123,4 +123,8 @@ public class Bookings extends Event {
         this.type = type;
         this.price = price;
     }
+
+    public Bookings() {
+        super();
+    }   
 }
