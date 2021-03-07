@@ -1,7 +1,4 @@
 package BusinessLogicLayer;
-/*
-* author BrandonFrade
-*/
 
 import java.io.Serializable;
 
@@ -12,7 +9,7 @@ public class Client implements Serializable{
 	String surname;
 	int phoneNumber;
 	String email;
-	String address;
+//	String address;
 
 	public String getClientid() {
 		return clientid;
@@ -45,7 +42,7 @@ public class Client implements Serializable{
 	public void setPhoneNumber(int phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
-
+/*
 	public String getAddress() {
 		return address;
 	}
@@ -53,7 +50,7 @@ public class Client implements Serializable{
 	public void setAddress(String address) {
 		this.address = address;
 	}
-
+*/
 	public String getEmail() {
 		return email;
 	}
@@ -62,12 +59,12 @@ public class Client implements Serializable{
 		this.email = email;
 	}
 
-	public Client(String clientid, String name, String surname, int phoneNumber, String email, String address) {
+	public Client(String clientid, String name, String surname, int phoneNumber, String email/*, String address*/) {
 		this.clientid = clientid;
 		this.name = name;
 		this.surname = surname;
 		this.phoneNumber = phoneNumber;
 		this.email = email;
-		this.address = address;
+	//	this.address = address;
 	}
 }
