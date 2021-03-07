@@ -3,47 +3,27 @@ package PresentationLayer;
 import java.util.*;
 import javax.mail.*;
 import javax.mail.internet.*;
-import javax.activation.*;
 
 public class Email {
 
-   public static void main(String [] args) {    
-      String to = "abcd@gmail.com";
-      String from = "web@gmail.com";
+    public void sendEmail(String email, Date date) {
+        String to = email;
+        String from = "DeliciousCatering@gmail.com";
+        String host = "localhost";
+        Properties properties = System.getProperties();
+        properties.setProperty("mail.smtp.host", host);
+        Session session = Session.getDefaultInstance(properties);
 
-      // Assuming you are sending email from localhost
-      String host = "localhost";
+        try {
+            MimeMessage message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(from));
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
+            message.setSubject("Delicous catering booking confirmation!");
+            message.setText("We have confirmed your event on "+date+". We hope you enjoy it!");
+            Transport.send(message);
+        } catch (MessagingException me) {
+            me.printStackTrace();
+        }
+    }
 
-      // Get system properties
-      Properties properties = System.getProperties();
-
-      // Setup mail server
-      properties.setProperty("mail.smtp.host", host);
-
-      // Get the default Session object.
-      Session session = Session.getDefaultInstance(properties);
-
-      try {
-         // Create a default MimeMessage object.
-         MimeMessage message = new MimeMessage(session);
-
-         // Set From: header field of the header.
-         message.setFrom(new InternetAddress(from));
-
-         // Set To: header field of the header.
-         message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
-
-         // Set Subject: header field
-         message.setSubject("This is the Subject Line!");
-
-         // Now set the actual message
-         message.setText("This is actual message");
-
-         // Send message
-         Transport.send(message);
-         System.out.println("Sent message successfully....");
-      } catch (MessagingException mex) {
-         mex.printStackTrace();
-      }
-   }
 }

@@ -7,7 +7,6 @@ import java.util.Scanner;
  */
 public class Program {
 
-
     public static void main(String[] args) throws ClassNotFoundException {
         
         
@@ -49,13 +48,14 @@ public class Program {
                         System.out.println("exit");
                         sn.close();
                         System.exit(0);
+                        contLoop = false;
                         break;
                     default:
                         System.out.println("THIS INPUT IS INCORRECT PLEASE ENTER RIGHT INPUT:");
                         break;
                 }
             }
-            
+           contLoop = false; 
         }    
     }
 }

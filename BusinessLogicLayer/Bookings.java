@@ -95,13 +95,12 @@ public class Bookings extends Event {
         this.price = price;
     }
 
-    public List<Food> getFoodList() {
-        
+    public List<Food> getFoodList() throws ClassNotFoundException {
+        foodList = dbc.getFood();
         return foodList;
     }
 
-    public void setFoodList(List<Food> foodList) throws ClassNotFoundException{
-        foodList = dbc.getFood();
+    public void setFoodList(List<Food> foodList) {
         this.foodList = foodList;
     }
 
@@ -138,4 +137,14 @@ public class Bookings extends Event {
     public Bookings() {
         super();
     }   
+
+    public List<Bookings> getBookings() throws ClassNotFoundException {
+        List<Bookings> bList = new LinkedList<>();
+        bList = dbc.getEvent();
+        return bList;
+    }
+
+    public void insertBooking(Bookings bookings) throws ClassNotFoundException {
+        dbc.insertBooking(bookings.type, bookings.price);
+    }
 }
