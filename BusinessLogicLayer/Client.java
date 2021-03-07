@@ -83,4 +83,5 @@ public class Client implements Serializable{
 		
 		dbc.insertClient(client.name, client.surname, client.phoneNumber, client.email);
 	}
+
 }
