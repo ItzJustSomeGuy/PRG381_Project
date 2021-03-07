@@ -1,6 +1,9 @@
 package BusinessLogicLayer;
 
 import java.util.LinkedList;
+
+import DataAccessLayer.DBConnection;
+
 import java.util.*; 
 
 public class Bookings extends Event {
@@ -17,12 +20,14 @@ public class Bookings extends Event {
     Boolean confirmed = false; // to confirm an event date, may be done in database 
     //Event day must be set elswere (Or in database) when confirming the event
 
+    DBConnection dbc;
+
     public Bookings(Venue eventVenue, int people, float price, String type) {
         super(eventVenue, people);
         this.price = price;
         this.type = type;
     }
-
+    
     //Calculates, sets and returns the total Price
     public float calculatePrice(){
         this.finalPrice = this.basePrice + this.price; //Venue price + Event Price
@@ -91,10 +96,12 @@ public class Bookings extends Event {
     }
 
     public List<Food> getFoodList() {
+        
         return foodList;
     }
 
-    public void setFoodList(List<Food> foodList) {
+    public void setFoodList(List<Food> foodList) throws ClassNotFoundException{
+        foodList = dbc.getFood();
         this.foodList = foodList;
     }
 
@@ -115,11 +122,11 @@ public class Bookings extends Event {
     }
 
     public Boolean getConfirmed() {
-        return Confirmed;
+        return confirmed;
     }
 
     public void setConfirmed(Boolean confirmed) {
-        Confirmed = confirmed;
+        confirmed = confirmed;
     }
 
     public Bookings(String type, float price) {

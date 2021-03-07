@@ -50,5 +50,9 @@ public class Venue implements Serializable{
 		this.number = number;
 		this.venueID = venueID;
 	}
+
+	public Venue(String name) {
+		this.name = name;
+	}
 	
 }
