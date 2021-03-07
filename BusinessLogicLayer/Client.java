@@ -2,13 +2,17 @@ package BusinessLogicLayer;
 
 import java.io.Serializable;
 
+import DataAccessLayer.DBConnection;
+
 //Client
 public class Client implements Serializable{
 	String clientid;
 	String name;
 	String surname;
-	int phoneNumber;
+	String phoneNumber;
 	String email;
+
+	DBConnection dbc;
 //	String address;
 
 	public String getClientid() {
@@ -35,11 +39,11 @@ public class Client implements Serializable{
 		this.surname = surname;
 	}
 
-	public int getPhoneNumber() {
+	public String getPhoneNumber() {
 		return phoneNumber;
 	}
 
-	public void setPhoneNumber(int phoneNumber) {
+	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 /*
@@ -59,12 +63,24 @@ public class Client implements Serializable{
 		this.email = email;
 	}
 
-	public Client(String clientid, String name, String surname, int phoneNumber, String email/*, String address*/) {
+	public Client(String clientid, String name, String surname, String phoneNumber, String email/*, String address*/) {
 		this.clientid = clientid;
 		this.name = name;
 		this.surname = surname;
 		this.phoneNumber = phoneNumber;
 		this.email = email;
 	//	this.address = address;
+	}
+	
+	public Client(String name, String surname, String phoneNumber, String email) {
+		this.name = name;
+		this.surname = surname;
+		this.phoneNumber = phoneNumber;
+		this.email = email;
+	}
+	
+	public void newClient(Client client) throws ClassNotFoundException {
+		
+		dbc.insertClient(client.name, client.surname, client.phoneNumber, client.email);
 	}
 }

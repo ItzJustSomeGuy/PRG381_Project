@@ -21,8 +21,8 @@ public class Email {
             message.setSubject("Delicous catering booking confirmation!");
             message.setText("We have confirmed your event on "+date+". We hope you enjoy it!");
             Transport.send(message);
-        } catch (MessagingException mex) {
-            mex.printStackTrace();
+        } catch (MessagingException me) {
+            me.printStackTrace();
         }
     }
 
