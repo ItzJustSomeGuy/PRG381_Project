@@ -7,14 +7,7 @@ import java.util.Scanner;
  */
 public class Program {
 
-    enum MainMenu {
-        nClient,
-        nEvent,
-        vEvent,
-        eEvent,
-        exit
-    }
-    public static void main(String[] args) {
+        public static void main(String[] args) {
         
         
         ProgramMethods pm = new ProgramMethods();

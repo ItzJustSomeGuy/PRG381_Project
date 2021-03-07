@@ -475,6 +475,10 @@ public class ProgramMethods {
         }
     }
     public void EditEvent() {
-        System.out.println("");
+        System.out.println("---------------------------------\n"
+                          +"\t\tEDIT EVENT\n"
+                          +"---------------------------------");
+        System.out.println("PLEASE ENTER YOUR PHONE NUMBER:");
+        Scanner sn = new
     }
 }
