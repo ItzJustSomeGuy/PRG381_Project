@@ -6,16 +6,16 @@ import java.util.Scanner;
  * Program
  */
 public class Program {
-
-    public static void main(String[] args) {
-        
-        enum MainMenu {
+enum MainMenu {
             nClient,
             nEvent,
             vEvent,
             eEvent,
-            exit
+            exit;
         }
+    public static void main(String[] args) {
+        
+        
         ProgramMethods pm = new ProgramMethods();
         boolean contLoop = true;
         while (contLoop) {
